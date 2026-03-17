@@ -1,9 +1,12 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
+import { links } from "@/constants/links";
 
 export default function header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
@@ -13,25 +16,29 @@ export default function header() {
 
         {/* Desktop nav */}
         <nav className="hidden sm:flex items-center gap-6 text-sm font-semibold text-gray-500">
-          <Link
-            href="/"
-            className="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-1.5 rounded-full text-sm font-bold transition-colors"
-          >
-            Top
-          </Link>
-
-          <Link
-            href="/about"
-            className="hover:text-indigo-500 transition-colors"
-          >
-            About
-          </Link>
+          {links.map((x) => {
+            const isActive =
+              x.href === "/" ? pathname === "/" : pathname.startsWith(x.href);
+            return (
+              <Link
+                key={x.href}
+                href={x.href}
+                className={
+                  isActive
+                    ? "text-indigo-500 font-bold border-b-2 border-indigo-500"
+                    : "text-gray-500 hover:text-indigo-500"
+                }
+              >
+                {x.label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Mobile hamburger */}
         <button
           className="sm:hidden p-2 rounded-lg text-gray-500 hover:bg-gray-100"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={(prev) => setMenuOpen(!prev)}
           aria-label="menu"
         >
           <svg

@@ -15,6 +15,6 @@ const techColors: Record<string, string> = {
   Supabase: "bg-emerald-100 text-emerald-700",
 };
 
-export function getTechColor(tech: string) {
+export function getTechBadge(tech: string) {
   return techColors[tech] ?? "bg-gray-100 text-gray-600";
 }

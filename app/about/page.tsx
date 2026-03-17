@@ -86,7 +86,7 @@ export default function Profile() {
           <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm space-y-2 text-sm text-gray-600 leading-relaxed">
             <p className="text-lg font-extrabold text-gray-900">Shun Kano</p>
             <p>
-              東京在住のフロントエンドエンジニアです。デザインと実装の両方に関わることが好きで、見た目の美しさと使い勝手の良さを両立したプロダクト作りを目指しています。コーヒーと散歩が好きで、よく街を歩きながらアイデアを練っています。
+              千葉在住のフロントエンドエンジニアです。人と話しながらものを作るのが好きで、「作る人・使う人に寄り添った設計」を意識しています。オフはバレーボールで体を動かしたり、ディズニー作品に浸ったりしてリフレッシュしています。
             </p>
           </div>
         </div>
@@ -97,24 +97,19 @@ export default function Profile() {
             💻 どんなエンジニアなの
           </h3>
           <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm text-sm text-gray-600 leading-relaxed space-y-2">
-            <p>
-              Next.js / React / TypeScript
-              をメインに使うフロントエンドエンジニアです。UI
-              の細部にこだわりつつ、パフォーマンスや保守性も意識した実装を心がけています。
-            </p>
-            <p>
-              デザイナーとの協業経験が多く、Figma
-              を読み解いて実装に落とし込むことが得意です。「デザインの意図を壊さないコード」を書くことを大切にしています。
-            </p>
+            <div className="space-y-3 sm:space-y-4">
+              <p>
+                Next.js / React / TypeScript
+                をメインに使うフロントエンドエンジニアです。「使う人が迷わない
+                UI」と「関わる人が迷わないコード」の両方を追いかけています。
+              </p>
+              <p>
+                DDD・TDDを意識した設計で長く育てられるプロダクト作りを目指しながら、インフラやセキュリティにも視野を広げています。
+              </p>
+            </div>
+
             <div className="flex flex-wrap gap-1.5 pt-1">
-              {[
-                "Next.js",
-                "React",
-                "TypeScript",
-                "Tailwind CSS",
-                "Figma",
-                "GraphQL",
-              ].map((t) => (
+              {["Next.js", "React", "TypeScript", "Tailwind CSS"].map((t) => (
                 <span
                   key={t}
                   className="bg-indigo-50 text-indigo-600 text-xs font-bold px-2.5 py-0.5 rounded-full"
@@ -131,7 +126,7 @@ export default function Profile() {
           <h3 className="text-base font-extrabold text-indigo-500">
             🏢 組織で目指すこと・やっていること
           </h3>
-          <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm text-sm text-gray-600 leading-relaxed space-y-2">
+          <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm text-sm text-gray-600 leading-relaxed space-y-3 sm:space-y-4">
             <p>
               チームの生産性を上げる「仕組み」を作ることに関心があります。コンポーネント設計やドキュメント整備など、個人の頑張りに依存しない開発体制を目指しています。
             </p>
@@ -147,7 +142,7 @@ export default function Profile() {
           <h3 className="text-base font-extrabold text-indigo-500">
             🌱 個人として目指すこと
           </h3>
-          <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm text-sm text-gray-600 leading-relaxed space-y-2">
+          <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm text-sm text-gray-600 leading-relaxed space-y-3 sm:space-y-4">
             <p>
               技術の幅を広げながら、最終的には「プロダクト全体を設計・推進できるエンジニア」になりたいと思っています。フロントエンドを起点に、UX
               設計やビジネス要件の理解も深めていきたいです。
@@ -165,11 +160,11 @@ export default function Profile() {
           </h3>
           <div className="grid sm:grid-cols-3 gap-3">
             {[
-              {
-                emoji: "🔍",
-                label: "細部までこだわる",
-                desc: "ピクセル単位のズレやコピーの言葉選びまで気にすると言われます",
-              },
+              // {
+              //   emoji: "🔍",
+              //   label: "細部までこだわる",
+              //   desc: "ピクセル単位のズレやコピーの言葉選びまで気にすると言われます",
+              // },
               {
                 emoji: "🤝",
                 label: "話しやすい",

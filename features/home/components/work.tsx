@@ -1,61 +1,6 @@
 import React from "react";
-import { getTechColor } from "@/lib/tag";
-const projects = [
-  {
-    id: 1,
-    title: "ブランドサイトのリニューアル",
-    category: "Web Design",
-    techs: ["React", "TypeScript", "Figma"],
-    thumb:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80",
-    year: "2024",
-  },
-  {
-    id: 2,
-    title: "ECサイト開発",
-    category: "Frontend",
-    techs: ["Next.js", "Tailwind CSS", "Prisma"],
-    thumb:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80",
-    year: "2024",
-  },
-  {
-    id: 3,
-    title: "管理画面ダッシュボード",
-    category: "Development",
-    techs: ["React", "D3.js", "GraphQL"],
-    thumb:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
-    year: "2023",
-  },
-  {
-    id: 4,
-    title: "デザインシステムの構築",
-    category: "Design",
-    techs: ["Figma", "Storybook", "CSS"],
-    thumb:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-    year: "2023",
-  },
-  {
-    id: 5,
-    title: "スマホアプリのUI改善",
-    category: "UI/UX",
-    techs: ["Figma", "React Native", "Expo"],
-    thumb:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80",
-    year: "2023",
-  },
-  {
-    id: 6,
-    title: "AIを使った記事生成ツール",
-    category: "Development",
-    techs: ["Next.js", "OpenAI API", "Supabase"],
-    thumb:
-      "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80",
-    year: "2024",
-  },
-];
+import { getTechBadge } from "@/libs/tech-badge";
+import { projects } from "@/constants/projects";
 
 export default function TopWork() {
   return (
@@ -94,7 +39,7 @@ export default function TopWork() {
                 {p.techs.map((t) => (
                   <span
                     key={t}
-                    className={`text-xs font-semibold px-2 py-0.5 rounded-full ${getTechColor(t)}`}
+                    className={`text-xs font-semibold px-2 py-0.5 rounded-full ${getTechBadge(t)}`}
                   >
                     {t}
                   </span>

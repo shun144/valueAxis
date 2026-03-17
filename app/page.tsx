@@ -1,8 +1,8 @@
 "use client";
-import Hero from "@/components/top/top-hero";
-import Work from "@/components/top/top-work";
+import Hero from "@/features/home/components/hero";
+import Work from "@/features/home/components/work";
 
-export default function Top() {
+export default function Home() {
   return (
     <>
       <Hero />
