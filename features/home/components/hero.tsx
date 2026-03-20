@@ -25,7 +25,7 @@ export default function TopHero() {
       </div>
 
       <div className="mt-6 flex flex-col gap-3">
-        <div className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl">
+        <div className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-3xl">
           Shun Kano is a{" "}
           <span className="font-bold text-indigo-500">Frontend Engineer</span>{" "}
           <span>Next.js / React を軸にしたWebアプリ開発が得意です。</span>
