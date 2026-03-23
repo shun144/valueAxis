@@ -1,12 +1,12 @@
-import React from "react";
+import { projects } from "@/features/project/constants/projects";
 import { getTechBadge } from "@/libs/tech-badge";
-import { projects } from "@/constants/projects";
+import Link from "next/link";
 
-export default function TopWork() {
+export default function ProjectList() {
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-16">
       <div className="flex items-center justify-between mb-5">
-        <h2 className="text-lg font-extrabold text-gray-900">🗂 制作実績</h2>
+        <h2 className="text-lg font-extrabold text-gray-900">プロジェクト</h2>
         <span className="text-xs text-gray-400 font-semibold bg-gray-100 px-3 py-1 rounded-full">
           {projects.length} projects
         </span>
@@ -14,13 +14,14 @@ export default function TopWork() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {projects.map((p) => (
-          <div
+          <Link
+            href={`/project/${p.id}`}
             key={p.id}
             className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group"
           >
             <div className="overflow-hidden">
               <img
-                src={p.thumb}
+                src={p.thumbnail}
                 alt={p.title}
                 className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -46,7 +47,7 @@ export default function TopWork() {
                 ))}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

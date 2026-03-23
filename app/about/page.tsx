@@ -241,6 +241,13 @@ export default function Profile() {
             </li>
           ))}
         </ul>
+
+        <iframe
+          src="https://www.youtube.com/embed/_-XvNqfgDZ4"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="w-full aspect-video"
+        />
       </section>
     </main>
   );

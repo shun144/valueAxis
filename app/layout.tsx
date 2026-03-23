@@ -32,12 +32,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div
-          className="min-h-screen bg-gray-50 text-gray-800"
+          className="min-h-screen bg-gray-50 text-gray-800 flex flex-col"
           style={{ fontFamily: "'Nunito', sans-serif" }}
         >
           <style>{`@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');`}</style>
           <Header />
-          {children}
+          <div className="flex-1">{children}</div>
+
           <Footer />
           <ScrollToTopButton />
         </div>
