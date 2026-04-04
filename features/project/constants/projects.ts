@@ -22,6 +22,7 @@ export interface ProjectDetail {
   keyFeatures: { title: string; desc: string; gif?: string }[];
   stack: string[];
   architectureImage?: string;
+  folderStructure?: string;
   devPoints: { title: string; desc: string; link?: string }[];
   // nextSteps: string[];
 }
@@ -29,6 +30,15 @@ export interface ProjectDetail {
 export const projects: Project[] = [
   {
     id: 1,
+    title: "【個人開発】オフライン待ち合わせアプリ",
+    category: "個人開発",
+    techs: ["React", "TypeScript", "Service Worker", "Supabase"],
+    thumbnail:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80",
+    year: "2026",
+  },
+  {
+    id: 2,
     title: "不動産向け用地情報管理サービスの保守・開発",
     category: "Frontend",
     techs: ["React", "TypeScript", "PostgreSQL"],
@@ -36,6 +46,7 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80",
     year: "2024",
   },
+
   {
     id: 3,
     title: "月次地図データ処理の自動化・効率化",
@@ -63,20 +74,11 @@ export const projects: Project[] = [
   //     "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80",
   //   year: "2017",
   // },
-  {
-    id: 6,
-    title: "【個人開発】オフライン待ち合わせアプリ",
-    category: "個人開発",
-    techs: ["React", "TypeScript", "Service Worker", "Supabase"],
-    thumbnail:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80",
-    year: "2026",
-  },
 ] as const;
 
 export const projectDetails: ProjectDetail[] = [
   {
-    id: 1,
+    id: 2,
     appName: "用地情報管理サービス",
     appCategory: "Web アプリ",
     thumbnail:
@@ -224,7 +226,7 @@ export const projectDetails: ProjectDetail[] = [
     ],
   },
   {
-    id: 6,
+    id: 1,
     appName: "オフライン待ち合わせアプリ",
     appCategory: "個人開発 / Web アプリ",
     thumbnail:
@@ -266,14 +268,123 @@ export const projectDetails: ProjectDetail[] = [
       "GitHub Actions",
     ],
     architectureImage: "/images/projects/offline-map-architecture.png",
+    folderStructure: `.
+├── assets
+│   └── icon
+│       ├── attraction.svg
+│       ├── cafe.svg
+│       ├── fastfood.svg
+│       ├── index.ts
+│       ├── restaurant.svg
+│       ├── shop.svg
+│       └── toilet.svg
+├── components
+│   └── ui
+│       ├── Header.tsx
+│       └── Layout.tsx
+├── config
+│   └── mapStyle
+│       ├── constants.ts
+│       ├── disneylandMapStyle.ts
+│       ├── index.ts
+│       ├── mabashiMapStyle.ts
+│       └── types.ts
+├── features
+│   ├── home
+│   │   ├── components
+│   │   │   ├── __tests__
+│   │   │   │   └── Home.spec.tsx
+│   │   │   ├── CacheClearSection.tsx
+│   │   │   ├── Card.tsx
+│   │   │   ├── Cards.tsx
+│   │   │   ├── Home.tsx
+│   │   │   ├── HomeHeader.tsx
+│   │   │   ├── HomeLoading.tsx
+│   │   │   └── NoData.tsx
+│   │   └── hooks
+│   │       ├── __tests__
+│   │       │   └── useHome.test.ts
+│   │       └── useHome.ts
+│   └── map
+│       ├── application
+│       │   ├── DestinationMarkerService.ts
+│       │   ├── IDestinationMarker.ts
+│       │   ├── IDestinationMarkerFactory.ts
+│       │   ├── IMap.ts
+│       │   └── MarkerStoreActions.ts
+│       ├── components
+│       │   ├── Map.tsx
+│       │   ├── MapLoading.tsx
+│       │   └── MapNotFound.tsx
+│       ├── domains
+│       │   ├── entities
+│       │   │   ├── __tests__
+│       │   │   │   ├── Destination.test.ts
+│       │   │   │   └── Map.test.ts
+│       │   │   ├── Destination.ts
+│       │   │   ├── DestinationMarker.ts
+│       │   │   └── Map.ts
+│       │   ├── repositories
+│       │   │   ├── DestinationRepository.ts
+│       │   │   └── MapRepository.ts
+│       │   └── valueObjects
+│       │       ├── __tests__
+│       │       │   └── LngLat.test.ts
+│       │       └── LngLat.ts
+│       ├── hooks
+│       │   ├── __tests__
+│       │   │   └── useMapEvent.test.tsx
+│       │   └── useMapEvent.ts
+│       ├── infrastructure
+│       │   ├── __tests__
+│       │   │   └── SupabaseMapRepository.test.ts
+│       │   ├── maplibre
+│       │   │   ├── DestinationMarkerFactory.ts
+│       │   │   ├── MapFactory.ts
+│       │   │   ├── MaplibreDestinationMarker.ts
+│       │   │   ├── MaplibreMap.ts
+│       │   │   └── marker.module.css
+│       │   └── supabase
+│       │       ├── destinationMapper.ts
+│       │       ├── mapMapper.ts
+│       │       ├── SupabaseDestinationRepository.ts
+│       │       └── SupabaseMapRepository.ts
+│       ├── loader
+│       │   ├── __tests__
+│       │   │   └── mapLoader.spec.tsx
+│       │   └── mapLoader.ts
+│       ├── utils
+│       │   ├── marker.ts
+│       │   └── userMarker.ts
+│       └── constants.ts
+├── lib
+│   ├── indexedDB
+│   │   ├── constants.ts
+│   │   ├── database.ts
+│   │   └── types.ts
+│   └── supabase
+│       ├── schema.ts
+│       └── supabaseClient.ts
+├── router
+│   ├── __tests__
+│   │   └── NotFound.spec.tsx
+│   ├── AppRouteProvider.tsx
+│   └── NotFound.tsx
+├── store
+│   └── useMapStore.ts
+├── styles
+│   └── index.css
+├── main.tsx
+└── serviceWorker.ts`,
     devPoints: [
       {
         title: "Service Worker によるオフラインキャッシュ設計",
         desc: "fetch インターセプトを活用し、地図タイルと目的地データをオンライン時に IndexedDB へ保存。ネットワーク状態に関わらず一貫した体験を提供できるよう設計した。",
       },
+
       {
-        title: "シンプルさを最優先にした UI 設計",
-        desc: "操作に不慣れなユーザーでも直感的に使えるよう、画面構成・導線・ボタン配置をシンプルに絞り込んだ。機能を増やすより「迷わせない」ことを設計の軸に置いた。",
+        title: "TDD とクリーンアーキテクチャを意識した設計",
+        desc: "ドメインロジックを TDD で実装し、テストコードが設計ドキュメントとして機能するよう意識した。レイヤードアーキテクチャとフィーチャーアーキテクチャを組み合わせることで、責務の分離を保ちながらファイル構成の見通しを高めた。",
       },
     ],
   },

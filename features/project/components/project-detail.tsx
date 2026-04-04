@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import SectionLabel from "@/features/project/components/section-label";
 import { type ProjectDetail } from "@/features/project/constants/projects";
@@ -147,6 +148,53 @@ export default function ProjectDetailPage({ projectDetail }: Props) {
               height={800}
               className="rounded-2xl w-full h-auto border border-gray-100"
             />
+          </div>
+        )}
+
+        {/* ── フォルダ構成 ── */}
+        {projectDetail.folderStructure && (
+          <div>
+            <p className="text-xs font-bold text-indigo-400 mb-3">
+              フォルダ構成
+            </p>
+            <details
+              className="border border-gray-100 rounded-2xl overflow-hidden"
+              onToggle={(e) => {
+                if (!(e.currentTarget as HTMLDetailsElement).open) return;
+                e.currentTarget.scrollIntoView({
+                  behavior: "smooth",
+                  block: "nearest",
+                });
+              }}
+            >
+              <summary className="px-5 py-3 text-sm font-semibold text-gray-600 cursor-pointer select-none list-none flex items-center gap-2 [&::-webkit-details-marker]:hidden bg-gray-50">
+                <span
+                  className="text-gray-400 transition-transform duration-200"
+                  style={{ display: "inline-block" }}
+                  ref={(el) => {
+                    const details = el?.closest("details");
+                    if (!details || !el) return;
+                    const update = () =>
+                      (el.style.transform = details.open
+                        ? "rotate(180deg)"
+                        : "rotate(0deg)");
+                    details.addEventListener("toggle", update);
+                  }}
+                >
+                  ▼
+                </span>
+                ディレクトリ構成を見る
+              </summary>
+              <pre
+                className="px-5 py-4 text-xs leading-relaxed overflow-auto text-gray-300 bg-gray-900"
+                style={{
+                  height: "300px",
+                  fontFamily: "'Courier New', Courier, monospace",
+                }}
+              >
+                {projectDetail.folderStructure}
+              </pre>
+            </details>
           </div>
         )}
 
