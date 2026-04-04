@@ -24,7 +24,7 @@ export interface ProjectDetail {
   architectureImage?: string;
   folderStructure?: string;
   devPoints: { title: string; desc: string; link?: string }[];
-  // nextSteps: string[];
+  nextSteps?: string[];
 }
 
 export const projects: Project[] = [
@@ -248,6 +248,7 @@ export const projectDetails: ProjectDetail[] = [
       {
         title: "地図・目的地のオフライン対応",
         desc: "オンライン時に地図タイルと目的地情報を IndexedDB にキャッシュ。電波のない環境でもダウンロード済みの地図とピンをそのまま閲覧できる。",
+        gif: "/images/projects/offline-map/app.gif",
       },
       {
         title: "ワンタップで地図をダウンロード",
@@ -258,6 +259,7 @@ export const projectDetails: ProjectDetail[] = [
         desc: "事前に目的地をピンで登録し、URLで共有できる。受け取った側もタップするだけで同じ地図・目的地を確認・保存できる。",
       },
     ],
+
     stack: [
       "React",
       "TypeScript",
@@ -267,7 +269,8 @@ export const projectDetails: ProjectDetail[] = [
       "Firebase Hosting",
       "GitHub Actions",
     ],
-    architectureImage: "/images/projects/offline-map-architecture.png",
+    architectureImage:
+      "/images/projects/offline-map/offline-map-architecture.png",
     folderStructure: `.
 ├── assets
 │   └── icon
@@ -386,6 +389,11 @@ export const projectDetails: ProjectDetail[] = [
         title: "TDD とクリーンアーキテクチャを意識した設計",
         desc: "ドメインロジックを TDD で実装し、テストコードが設計ドキュメントとして機能するよう意識した。レイヤードアーキテクチャとフィーチャーアーキテクチャを組み合わせることで、責務の分離を保ちながらファイル構成の見通しを高めた。",
       },
+    ],
+    nextSteps: [
+      "地図のスタイルやUIなどがまだまだ機能的とは言えないため今後も修正する",
+      "対応地図を増やす",
+      "認証認可による機能拡張",
     ],
   },
 ];

@@ -58,7 +58,7 @@ export default function TopHero() {
 
         <div className="flex flex-wrap items-center gap-3">
           {[
-            { label: "開発経験年数", value: "3年+" },
+            { label: "開発経験年数", value: "5年+" },
             { label: "プロジェクト", value: "5件" },
             { label: "得意分野", value: "UI/Dev" },
           ].map((s) => (

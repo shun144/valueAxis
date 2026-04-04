@@ -229,22 +229,25 @@ export default function ProjectDetailPage({ projectDetail }: Props) {
       </section>
 
       {/* ── 第六セクション：今後の展望 ── */}
-      {/* <section>
-        <SectionLabel en="Next Step" ja="今後の展望" />
-        <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
-          <ul className="space-y-2">
-            {projectDetail.nextSteps.map((s, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-2 text-sm text-gray-600"
-              >
-                <span className="text-indigo-300 mt-0.5">▸</span>
-                {s}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section> */}
+
+      {projectDetail.nextSteps && (
+        <section>
+          <SectionLabel en="Next Step" ja="今後の展望" />
+          <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+            <ul className="space-y-2">
+              {projectDetail.nextSteps.map((s, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-2 text-sm text-gray-600"
+                >
+                  <span className="text-indigo-300 mt-0.5">▸</span>
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* ── フッター：他の案件 ── */}
       {/* <section className="pb-12">
