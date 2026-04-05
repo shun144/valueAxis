@@ -249,6 +249,28 @@ export default function ProjectDetailPage({ projectDetail }: Props) {
         </section>
       )}
 
+      {projectDetail.externalLink && (
+        <section>
+          <SectionLabel en="Link" ja="外部リンク" />
+          <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+            <ul className="space-y-2">
+              {projectDetail.externalLink.map(({ title, url }, i) => (
+                <li key={i}>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-gray-600 underline underline-offset-2 hover:text-indigo-600 transition-colors duration-200"
+                  >
+                    {title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {/* ── フッター：他の案件 ── */}
       {/* <section className="pb-12">
         <SectionLabel en="Other Works" ja="他の制作実績" />

@@ -25,6 +25,7 @@ export interface ProjectDetail {
   folderStructure?: string;
   devPoints: { title: string; desc: string; link?: string }[];
   nextSteps?: string[];
+  externalLink?: { title: string; url: string }[];
 }
 
 export const projects: Project[] = [
@@ -394,6 +395,17 @@ export const projectDetails: ProjectDetail[] = [
       "地図のスタイルやUIなどがまだまだ機能的とは言えないため今後も修正する",
       "対応地図を増やす",
       "認証認可による機能拡張",
+    ],
+    externalLink: [
+      {
+        title:
+          "【Qiita記事】オフラインでも地図と現在地をすぐ確認できる、待ち合わせアプリを作りました",
+        url: "https://qiita.com/shun123/items/91a65bfbe41aea8dbbda",
+      },
+      {
+        title: "【GitHubリポジトリ】オフラインマップアプリ",
+        url: "https://github.com/shun144/meeting-map",
+      },
     ],
   },
 ];
