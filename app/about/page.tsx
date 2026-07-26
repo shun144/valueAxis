@@ -75,6 +75,25 @@ export default function Profile() {
 
         <div className="space-y-3">
           <h3 className="text-base font-extrabold text-indigo-500">
+            📓 職務要約
+          </h3>
+          <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm text-sm text-gray-600 leading-relaxed space-y-2">
+            <div className="space-y-3 sm:space-y-4">
+              <p>
+                IT業界での経験は約10年、フロントエンドは3年です。SIer
+                で業務システムの開発・運用、データエンジニアとしてデータ処理・基盤周りを担当し、直近3年はフロントエンドを担当しています。要件・データ・画面のいずれも経験しているため、仕様の背景まで踏み込んだうえで実装方針を判断できる点が強みです。
+              </p>
+              <p>
+                得意としているのは、長く放置されてきた課題の原因特定と是正、テスト設計です。直近では
+                BtoB 業務システムで約 500 ケースの手動テストを Playwright
+                で自動化し、リリースごとの手動確認に依存しない品質担保の状態を作りました。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-3">
+          <h3 className="text-base font-extrabold text-indigo-500">
             💻 どんなエンジニアか
           </h3>
           <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm text-sm text-gray-600 leading-relaxed space-y-2">
@@ -82,10 +101,11 @@ export default function Profile() {
               <p>
                 Next.js / React / TypeScript
                 をメインに使うフロントエンドエンジニアです。「使う人が迷わない
-                UI」と「関わる人が迷わないコード」の両方を追いかけています。
+                UI」と「関わる人が迷わないコード」の両方を追いかけています。どちらも突き詰めると、迷いの原因になっている前提や構造を見つけて整えていく作業だと考えています。
               </p>
               <p>
-                DDD・TDDを意識した設計で長く育てられるプロダクト作りを目指しながら、インフラやセキュリティにも視野を広げています。
+                設計は DDD・TDD
+                を意識し、機能を足すたびに複雑さが増していくのではなく、長く育てていけるプロダクトを目指しています。フロントエンドを軸にしつつ、インフラやセキュリティにも視野を広げているところです。
               </p>
             </div>
 
@@ -113,6 +133,10 @@ export default function Profile() {
             </p>
             <p>
               認識のズレを防ぐため、口頭で終わらせず仕様書・図など目に見える形で残すことを意識しています。作成した資料はなるべく早い段階で共有し、フィードバックをもらうことで認識合わせと手戻りの削減につなげています。
+            </p>
+            <p>
+              テスト自動化や AI
+              を前提とした開発プロセスの設計も、この「仕組み」づくりの一環として取り組んでいます。手動での確認や個人の記憶に頼っている部分を、誰が触っても品質が保てる形に置き換えていくことを重視しています。
             </p>
           </div>
         </div>
